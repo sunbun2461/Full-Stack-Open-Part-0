@@ -1,0 +1,30 @@
+Full Stack Open
+0.6 New Note
+****************
+
+
+
+title 0.6: New note
+
+note over browser:
+user enters note into text input field
+user clicks save (submit) button
+end note
+
+note over browser:
+browser executes the event handler
+prevents default action of form
+that rerenders notes to display
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note left of browser
+The POST request contains the new note as JSON-data (content, date)
+end note
+
+server-->browser: responds with status code 201
+
+note left of server:
+this time server doesn't ask for redirect
+end note

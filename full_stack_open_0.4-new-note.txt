@@ -1,0 +1,37 @@
+Full Stack Open
+0.4 new note
+***************
+
+title 0.4: new note
+
+note over browser:
+user enters note into text input field
+user clicks save (submit) button
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTTP 302 Asking for new HTTP GET request to location exampleapp/notes
+
+note left of browser
+browser restarts causing more HTTPS GET requests
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{content: "Onan was here", date: "2022-02-13T11:44:11.790Z"}, ...]
+
+note over browser:
+browser executes the event handler
+that rerenders notes to display
+end note
